@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>React</title>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+	</head>
+	<body>
+	<div id="myid"></div>
+	<script type="text/babel">
+	class Quantity extends React.Component
+	{
+	constructor(props)
+	{
+	super(props);
+	this.state={quantity:0};
+	}
+	increquantity=()=>{
+	this.setState({quantity:this.state.quantity+1});
+	}
+	render()
+	{
+	alert("Incremented");
+	return(<div>
+	<p>
+	<label>Enter quantity: <input type="text" value={this.state.quantity}></input>
+	<button onClick={this.increquantity}>+</button>
+	</label>
+	</p>
+	</div>)
+	}
+	}
+ReactDOM.render(
+  <Quantity/>,
+  document.getElementById('myid')
+);
+  		</script>
+	</body>
+</html>
